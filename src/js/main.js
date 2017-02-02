@@ -1,11 +1,12 @@
 /*
- * This script manages the screens and the player's commands. 
+ * This script manages the players' commands. 
  */
 "use strict";
 
 var playerChoice = 0;				//Available values: 1 - Rock; 2 - Paper; 3 - Scissors.
+var computerChoice = 0;
 
-function setChoice(choice) {
+function setPlayerChoice(choice) {
 	switch(choice) {
 		case "rock":
 			playerChoice = 1;
@@ -19,13 +20,28 @@ function setChoice(choice) {
 		default:
 			console.log('Error: Invalid Choice.');
 	}
+
+	if (playerChoice != 0) {
+		play();
+	}
 }
 
-function mainScreen() {
-	document.getElementById("screen").innerHTML = getGameButton();
+function getComputerChoice() {
+	var choice = Math.random();
+
+	if (choice > 0.66) {
+		computerChoice = 1;
+	} else if (choice > 0.33) {
+		computerChoice = 2;
+	} else {
+		computerChoice = 3;
+	}
+
+	return computerChoice;
 }
 
-function game() {
-	document.getElementById("screen").innerHTML = getOptions()
+function play() {
+	document.getElementById("screen").innerHTML = getChoiceImage(playerChoice)
+												+ getChoiceImage(getComputerChoice())
 												+ getMainScreenButton();
 }
