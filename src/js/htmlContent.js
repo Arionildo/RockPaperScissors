@@ -26,6 +26,10 @@ function getChoiceImage(choice) {
 	}
 }
 
+function getMatchProgress(currentPlay, maxPlays) {
+	return '<p>'+ currentPlay +' / '+ maxPlays +'</p>';
+}
+
 function getRockButton() {
 	return '<img onclick="setPlayerChoice(\'rock\')" src="../../assets/img/rock.png">';
 }
@@ -58,6 +62,12 @@ function getMainScreenButton() {
 	return '<button onclick="mainScreen();">Ir para a tela inicial</button>';
 }
 
-function getGameButton() {
-	return '<button onclick="gameScreen();">Jogar</button>';
+function getMainScreenButtons() {
+	return '<button onclick="gameScreen(1);">Jogar Partida Rápida</button>'
+		+ '<button onclick="gameScreen(2);">Jogar Melhor de 3</button>'
+		+ '<button onclick="gameScreen(3);">Jogar Melhor de 5</button>';
+}
+
+function getNextButton() {
+	return '<button onclick="gameScreen(0);">Próximo</button>';
 }

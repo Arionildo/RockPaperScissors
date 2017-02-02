@@ -5,6 +5,8 @@
 
 var playerChoice = 0;				//Available values: 1 - Rock; 2 - Paper; 3 - Scissors.
 var computerChoice = 0;
+var currentPlay = 1;
+var maxPlays = 0;
 
 function setPlayerChoice(choice) {
 	switch(choice) {
@@ -41,7 +43,15 @@ function getComputerChoice() {
 }
 
 function play() {
-	document.getElementById("screen").innerHTML = getChoiceImage(playerChoice)
-												+ getChoiceImage(getComputerChoice())
+	var gameScreenButtons = getChoiceImage(playerChoice)
+						+ getChoiceImage(getComputerChoice());
+
+	currentPlay++;
+
+	if (currentPlay <= maxPlays) {
+		gameScreenButtons += getNextButton();
+	}
+
+	document.getElementById("screen").innerHTML = gameScreenButtons
 												+ getMainScreenButton();
 }
