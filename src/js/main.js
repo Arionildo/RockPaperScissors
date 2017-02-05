@@ -6,8 +6,8 @@
 var playerChoice = 0;						//Available values: 1 - Rock; 2 - Paper; 3 - Scissors.
 var computerChoice = 0;
 
-var playerScore = {win: 0, draw: 0, lose: 0};
-var computerScore = {win: 0, draw: 0, lose: 0};
+var playerScore = new Object();
+var computerScore = new Object();
 
 var currentPlay = 1;
 var maxPlays = 0;
