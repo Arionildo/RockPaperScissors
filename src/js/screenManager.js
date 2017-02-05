@@ -4,11 +4,11 @@
 "use strict";
 
 function mainScreen() {
-	currentPlay = 1;
+	reset();
 	document.getElementById("screen").innerHTML = getMainScreenButtons();
 }
 
-function gameScreen(gameMode) {
+function gameModeScreen(gameMode) {
 	var progressButton = "";
 
 	if (gameMode != 0) {
@@ -33,5 +33,10 @@ function gameScreen(gameMode) {
 
 	document.getElementById("screen").innerHTML = progressButton
 												+ getOptions()
+												+ getMainScreenButton();
+}
+
+function matchResultScreen(matchScreenButtons) {
+	document.getElementById("screen").innerHTML = matchScreenButtons
 												+ getMainScreenButton();
 }

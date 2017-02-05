@@ -27,7 +27,12 @@ function getChoiceImage(choice) {
 }
 
 function getMatchProgress(currentPlay, maxPlays) {
-	return '<p>'+ currentPlay +' / '+ maxPlays +'</p>';
+	return '<p>Jogadas: '+ currentPlay +' / '+ maxPlays +'</p>';
+}
+
+function getScoreText() {
+	return '<p>Seu Placar (Vitórias/Empates/Derrotas): '+ playerScore.win +' / '+ playerScore.draw +' / '+ playerScore.lose +'</p>'
+		+ '<p>Placar do Computador (Vitórias/Empates/Derrotas): '+ computerScore.win +' / '+ computerScore.draw +' / '+ computerScore.lose +'</p>';
 }
 
 function getRockButton() {
@@ -63,11 +68,23 @@ function getMainScreenButton() {
 }
 
 function getMainScreenButtons() {
-	return '<button onclick="gameScreen(1);">Jogar Partida Rápida</button>'
-		+ '<button onclick="gameScreen(2);">Jogar Melhor de 3</button>'
-		+ '<button onclick="gameScreen(3);">Jogar Melhor de 5</button>';
+	return '<button onclick="gameModeScreen(1);">Jogar Partida Rápida</button>'
+		+ '<button onclick="gameModeScreen(2);">Jogar Melhor de 3</button>'
+		+ '<button onclick="gameModeScreen(3);">Jogar Melhor de 5</button>';
 }
 
 function getNextButton() {
-	return '<button onclick="gameScreen(0);">Próximo</button>';
+	return '<button onclick="gameModeScreen(0);">Próximo</button>';
+}
+
+function drawText() {
+	return '<p>Você empatou!</p>';
+}
+
+function playerWinText() {
+	return '<p>Você venceu!</p>';
+}
+
+function computerWinText() {
+	return '<p>O computador venceu!</p>';
 }

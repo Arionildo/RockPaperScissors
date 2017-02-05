@@ -3,8 +3,12 @@
  */
 "use strict";
 
-var playerChoice = 0;				//Available values: 1 - Rock; 2 - Paper; 3 - Scissors.
+var playerChoice = 0;						//Available values: 1 - Rock; 2 - Paper; 3 - Scissors.
 var computerChoice = 0;
+
+var playerScore = {win: 0, draw: 0, lose: 0};
+var computerScore = {win: 0, draw: 0, lose: 0};
+
 var currentPlay = 1;
 var maxPlays = 0;
 
@@ -43,15 +47,22 @@ function getComputerChoice() {
 }
 
 function play() {
-	var gameScreenButtons = getChoiceImage(playerChoice)
+	var matchScreenButtons = getChoiceImage(playerChoice)
 						+ getChoiceImage(getComputerChoice());
 
+	matchScreenButtons += getMatchWinner(playerChoice, computerChoice);
+	matchScreenButtons += getScoreText();
 	currentPlay++;
 
 	if (currentPlay <= maxPlays) {
-		gameScreenButtons += getNextButton();
+		matchScreenButtons += getNextButton();
 	}
 
-	document.getElementById("screen").innerHTML = gameScreenButtons
-												+ getMainScreenButton();
+	matchResultScreen(matchScreenButtons);
+}
+
+function reset() {
+	playerScore = {win: 0, draw: 0, lose: 0};
+	computerScore = {win: 0, draw: 0, lose: 0};
+	currentPlay = 1;
 }
