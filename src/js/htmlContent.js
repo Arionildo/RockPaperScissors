@@ -40,33 +40,33 @@ function getScoreText() {
 }
 
 function getRockButton() {
-	return '<img onclick="setPlayerChoice(\'rock\')" src="../../assets/img/rock.png">';
+	return '<img title="Pedra" onclick="setPlayerChoice(\'rock\')" src="../../assets/img/rock.png">';
 }
 
 function getPaperButton() {
-	return '<img onclick="setPlayerChoice(\'paper\')" src="../../assets/img/paper.png">';
+	return '<img title="Papel" onclick="setPlayerChoice(\'paper\')" src="../../assets/img/paper.png">';
 }
 
 function getScissorsButton() {
-	return '<img onclick="setPlayerChoice(\'scissors\')" src="../../assets/img/scissors.png">';
+	return '<img title="Tesoura" onclick="setPlayerChoice(\'scissors\')" src="../../assets/img/scissors.png">';
 }
 
 function getOptions() {
-	return '<div>'
+	return '<div><p class="textFeedback">Escolha Pedra, Papel ou Tesoura:</p>'
 		+ getRockButton() + getPaperButton() + getScissorsButton()
 		+ '</div>';
 }
 
 function getRockImage() {
-	return '<img src="../../assets/img/rock.png">';
+	return '<img title="Pedra" src="../../assets/img/rock.png">';
 }
 
 function getPaperImage() {
-	return '<img src="../../assets/img/paper.png">';
+	return '<img title="Papel" src="../../assets/img/paper.png">';
 }
 
 function getScissorsImage() {
-	return '<img src="../../assets/img/scissors.png">';
+	return '<img title="Tesoura" src="../../assets/img/scissors.png">';
 }
 
 function getPlayersButtons() {
@@ -75,7 +75,7 @@ function getPlayersButtons() {
 }
 
 function getMainScreenButton() {
-	return '<button class="center" onclick="mainScreen();">Ir para a tela inicial</button>';
+	return '<button class="center footerButton" onclick="mainScreen();">Ir para a tela inicial</button>';
 }
 
 function getMainScreenButtons() {
@@ -85,17 +85,17 @@ function getMainScreenButtons() {
 }
 
 function getNextButton() {
-	return '<button onclick="gameModeScreen(0);">Próximo</button>';
+	return '<button onclick="gameModeScreen(0);">Próxima rodada</button>';
 }
 
 function drawText() {
-	return isCpuGame ? '<p>O computador 1 empatou!</p>' : '<p>Você empatou!</p>';
+	return isCpuGame ? '<p class="textFeedback">Ops! Deu empate...</p>' : '<p class="textFeedback">Ops! Vocês empataram...</p>';
 }
 
 function playerWinText() {
-	return isCpuGame ? '<p>O computador 1 venceu!</p>' : '<p>Você venceu!</p>';
+	return isCpuGame ? '<p class="textFeedback">O computador 1 venceu!</p>' : '<p class="textFeedback">Parabéns! Você venceu!</p>';
 }
 
 function computerWinText() {
-	return isCpuGame ? '<p>O computador 2 venceu!</p>' : '<p>O computador venceu!</p>';
+	return isCpuGame ? '<p class="textFeedback">O computador 2 venceu!</p>' : '<p class="textFeedback">O computador venceu!</p>';
 }
