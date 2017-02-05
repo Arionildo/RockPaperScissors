@@ -52,7 +52,9 @@ function getScissorsButton() {
 }
 
 function getOptions() {
-	return getRockButton() + getPaperButton() + getScissorsButton();
+	return '<div>'
+		+ getRockButton() + getPaperButton() + getScissorsButton()
+		+ '</div>';
 }
 
 function getRockImage() {
@@ -73,7 +75,7 @@ function getPlayersButtons() {
 }
 
 function getMainScreenButton() {
-	return '<button onclick="mainScreen();">Ir para a tela inicial</button>';
+	return '<button class="center" onclick="mainScreen();">Ir para a tela inicial</button>';
 }
 
 function getMainScreenButtons() {

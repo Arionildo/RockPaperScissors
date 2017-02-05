@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+
+body {
+  position: relative;
+  font-family: 'Pangolin', cursive;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  background: #52aeeb;
+  background-image: -webkit-linear-gradient(top, #52aeeb, #14699e);
+  background-image: -moz-linear-gradient(top, #52aeeb, #14699e);
+  background-image: -ms-linear-gradient(top, #52aeeb, #14699e);
+  background-image: -o-linear-gradient(top, #52aeeb, #14699e);
+  background-image: linear-gradient(to bottom, #52aeeb, #14699e);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: 'Pangolin', cursive;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+#screen {
+  position: absolute;
+  margin-top: 10px;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
