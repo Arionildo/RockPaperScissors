@@ -21,9 +21,8 @@ function getChoiceImage(choice) {
 			console.log('Error: Invalid Choice.');
 	}
 
-	if (image != null) {
+	if (image != null)
 		return image;
-	}
 }
 
 function getMatchProgress(currentPlay, maxPlays) {
@@ -61,6 +60,11 @@ function getPaperImage() {
 
 function getScissorsImage() {
 	return '<img src="../../assets/img/scissors.png">';
+}
+
+function getPlayersButtons() {
+	return '<button onclick="callGameModes(false);">Jogador VS Computador</button>'
+		+ '<button onclick="callGameModes(true);">Computador VS Computador</button>';
 }
 
 function getMainScreenButton() {

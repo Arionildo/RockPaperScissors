@@ -5,13 +5,18 @@
 
 function mainScreen() {
 	reset();
-	document.getElementById("screen").innerHTML = getMainScreenButtons();
+	document.getElementById("screen").innerHTML = getPlayersButtons();
+}
+
+function callGameModes(cpuGame) {
+	isCpuGame = cpuGame;
+	document.getElementById("screen").innerHTML = getMainScreenButtons(isCpuGame);
 }
 
 function gameModeScreen(gameMode) {
 	var progressButton = "";
 
-	if (gameMode != 0) {
+	if (gameMode != 0)
 		switch(gameMode) {
 			case 1:
 				maxPlays = 1;
@@ -25,18 +30,25 @@ function gameModeScreen(gameMode) {
 			default:
 				console.log('Error: Invalid Mode.');
 		}
-	}
 
-	if (maxPlays != 0) {
+	if (maxPlays != 0)
 		progressButton = getMatchProgress(currentPlay, maxPlays);
-	}
 
-	document.getElementById("screen").innerHTML = progressButton
+	if (isCpuGame)
+		simulatePlayerChoice();
+	else
+		document.getElementById("screen").innerHTML = progressButton
 												+ getOptions()
 												+ getMainScreenButton();
 }
 
 function matchResultScreen(matchScreenButtons) {
-	document.getElementById("screen").innerHTML = matchScreenButtons
+	var progressButton = "";
+
+	if (maxPlays != 0)
+		progressButton = getMatchProgress(currentPlay, maxPlays);
+
+	document.getElementById("screen").innerHTML = progressButton
+												+ matchScreenButtons
 												+ getMainScreenButton();
 }

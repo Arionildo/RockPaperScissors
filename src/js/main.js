@@ -11,6 +11,7 @@ var computerScore = new Object();
 
 var currentPlay = 1;
 var maxPlays = 0;
+var isCpuGame = false;
 
 function setPlayerChoice(choice) {
 	switch(choice) {
@@ -27,9 +28,13 @@ function setPlayerChoice(choice) {
 			console.log('Error: Invalid Choice.');
 	}
 
-	if (playerChoice != 0) {
+	if (playerChoice != 0)
 		play();
-	}
+}
+
+function simulatePlayerChoice() {
+	playerChoice = getComputerChoice();
+	play();
 }
 
 function getComputerChoice() {
@@ -52,13 +57,12 @@ function play() {
 
 	matchScreenButtons += getMatchWinner(playerChoice, computerChoice);
 	matchScreenButtons += getScoreText();
-	currentPlay++;
 
-	if (currentPlay <= maxPlays) {
-		matchScreenButtons += getNextButton();
-	}
+	if ((currentPlay+1) <= maxPlays)
+		matchScreenButtons += getNextButton(isCpuGame);
 
 	matchResultScreen(matchScreenButtons);
+	currentPlay++;
 }
 
 function reset() {
