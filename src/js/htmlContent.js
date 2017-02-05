@@ -30,8 +30,13 @@ function getMatchProgress(currentPlay, maxPlays) {
 }
 
 function getScoreText() {
-	return '<p>Seu Placar (Vitórias/Empates/Derrotas): '+ playerScore.win +' / '+ playerScore.draw +' / '+ playerScore.lose +'</p>'
-		+ '<p>Placar do Computador (Vitórias/Empates/Derrotas): '+ computerScore.win +' / '+ computerScore.draw +' / '+ computerScore.lose +'</p>';
+	if (isCpuGame)
+		return '<p>Placar do Computador 1 (Vitórias/Empates/Derrotas): '+ playerScore.win +' / '+ playerScore.draw +' / '+ playerScore.lose +'</p>'
+			+ '<p>Placar do Computador 2 (Vitórias/Empates/Derrotas): '+ computerScore.win +' / '+ computerScore.draw +' / '+ computerScore.lose +'</p>';
+	else
+		return '<p>Seu Placar (Vitórias/Empates/Derrotas): '+ playerScore.win +' / '+ playerScore.draw +' / '+ playerScore.lose +'</p>'
+			+ '<p>Placar do Computador (Vitórias/Empates/Derrotas): '+ computerScore.win +' / '+ computerScore.draw +' / '+ computerScore.lose +'</p>';
+
 }
 
 function getRockButton() {
@@ -82,13 +87,13 @@ function getNextButton() {
 }
 
 function drawText() {
-	return '<p>Você empatou!</p>';
+	return isCpuGame ? '<p>O computador 1 empatou!</p>' : '<p>Você empatou!</p>';
 }
 
 function playerWinText() {
-	return '<p>Você venceu!</p>';
+	return isCpuGame ? '<p>O computador 1 venceu!</p>' : '<p>Você venceu!</p>';
 }
 
 function computerWinText() {
-	return '<p>O computador venceu!</p>';
+	return isCpuGame ? '<p>O computador 2 venceu!</p>' : '<p>O computador venceu!</p>';
 }
